@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/stylesheet/index.css">
+    <link rel="stylesheet" href="assets/css/fontello.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>shopping</title>
+</head>
+
+<body>
+    <main class="container-fluid p-0 container-xxl ">
+
+        <header>
+            <nav>
+                <a href="#">Ecommerce</a>
+                <i class="icon-shopping-bag" id="basket"></i>
+            </nav>
+        </header>
+
+        <!-- end header  -->
+
+        <section id="bigbox" class="container  ">
+            <span class="col-12">Shop Products</span>
+
+            <div class="box1 col-12 col-md-5 col-lg-3 p-lg-3 ">
+                <img src="assets/img/product1.jpg" alt="" class="col-8 col-md-12">
+                <h3>AEROREADY SHIRT</h3>
+                <span class="price">$25</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+            <div class="box2 col-12 col-md-5 col-lg-3 p-lg-3 ">
+                <img src="assets/img/product2.jpg" alt="" class="col-8 col-md-12">
+                <h3>WIRELESS EARBUDS</h3>
+                <span>$100</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+            <div class="box3 col-12 col-md-5 col-lg-3 p-lg-3">
+                <img src="assets/img/product3.jpg" alt="" class="col-8 col-md-12">
+                <h3>HOODED PARKA</h3>
+                <span>$45</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+            <div class="box4 col-12 col-md-5 col-lg-3 p-lg-3">
+                <img src="assets/img/product4.jpg" alt="" class="col-8 col-md-12">
+                <h3>STRAW METAL BOTTLE</h3>
+                <span>$24</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+            <div class="box5 col-12 col-md-5 col-lg-3 p-lg-3">
+                <img src="assets/img/product5.jpg" alt="" class="col-8 col-md-12">
+                <h3>SILVER METAL SUNGLASSES</h3>
+                <span>$50</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+            <div class="box6 col-12 col-md-5 col-lg-3 p-lg-3">
+                <img src="assets/img/product6.jpg" alt="" class="col-8 col-md-12">
+                <h3>BLACK HAT</h3>
+                <span>$50</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+            <div class="box7 col-12 col-md-5 col-lg-3 p-lg-3">
+                <img src="assets/img/product7.jpg" alt="" class="col-8 col-md-12">
+                <h3>BACKPACK</h3>
+                <span>$70</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+            <div class="box8 col-12 col-md-5 col-lg-3 p-lg-3">
+                <img src="assets/img/product8.jpg" alt="" class="col-8 col-md-12">
+                <h3>ULTRABOOST 22</h3>
+                <span>$450</span>
+                <i class=" icon-shopping-bag"></i>
+            </div>
+
+            <div class="list">
+                <h2>Your Cart</h2>
+                <i class="icon-cancel cancel"></i>
+
+
+                <div class="list_add">
+
+                </div>
+
+                <div class="pay">
+                    <div id="pay1">Total</div>
+                    <div id="pay2">$</div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <!-- <span>total</span> -->
+
+
+
+
+        </section>
+
+    </main>
+
+</body>
+
+<script>
+    let list = document.getElementsByClassName('list')[0]
+    document.getElementById('basket').addEventListener('click', function () {
+        list.style.transform = 'translateX(0px)'
+    })
+    document.getElementsByClassName('cancel')[0].addEventListener('click', function () {
+        list.style.transform = 'translateX(10000px)'
+    })
+
+    // end list move ///////////////////////////////////////////////////////
+
+    let list_add = document.getElementsByClassName('list_add')[0]
+    let add = document.querySelectorAll('section>div>i')
+    let flag0 = 2
+    let price0
+    let price1
+    let price2
+    let price3
+    let price4
+    let price5
+    let price6
+    let price7
+
+
+    add[0].addEventListener('click', function () {
+
+
+
+        if (flag0 % 2 == 0) {
+
+            x0 = document.createElement('div')
+
+            x0.innerHTML = `<figure><img src="assets/img/product1.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">AEROREADY SHIRT</div>
+                            <div class="price0">$0</div>
+                            <div class="last">
+                                <div class="num"><input id = "inp0" type="number" value = '1'><span id ='total0'>Add</span></div>
+                                <i class="icon-trash" id = "trash0"></i>
+                            </div>`
+
+            list_add.append(x0)
+
+            let trash0 = document.getElementById('trash0')
+            trash0.addEventListener('click', function () {
+                x0.style.display = 'none'
+                flag0 = 2
+
+            })
+
+            let inp0 = document.getElementById('inp0')
+            let total0 = document.getElementById('total0')
+            price0 = document.getElementsByClassName('price0')[0]
+
+            total0.addEventListener('click', function () {
+
+                sample0 = price0.innerHTML = '$' + (inp0.value) * 25
+                sample0 = Number(sample0.replace('$',''))
+                arr.push(sample0)
+
+            })
+
+            flag0++
+
+        } else {
+            alert('you have this item in your cart')
+        }
+
+
+
+
+    })
+
+
+    let flag1 = 2
+
+
+
+    add[1].addEventListener('click', function () {
+
+
+        if (flag1 % 2 == 0) {
+            x1 = document.createElement('div')
+            x1.innerHTML = `<figure><img src="assets/img/product2.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">WIRELESS EARBUDS</div>
+                            <div class="price1">$0</div>
+                            <div class="last">
+                                <div class="num"><input type="number" id = "inp1" value = '1'><span id ='total1'>Add</span></div>
+                                <i class="icon-trash" id = "trash1"></i>
+                            </div>`
+
+            list_add.append(x1)
+
+            let trash1 = document.getElementById('trash1')
+            trash1.addEventListener('click', function () {
+                x1.style.display = 'none'
+                flag1 = 2
+            })
+
+            let inp1 = document.getElementById('inp1')
+            let total1 = document.getElementById('total1')
+            price1 = document.getElementsByClassName('price1')[0]
+
+            total1.addEventListener('click', function () {
+
+                sample1 = price1.innerHTML = '$' + (inp1.value) * 100
+                sample1 = Number(sample1.replace('$',''))
+                arr.push(sample1)
+
+            })
+            flag1++
+
+
+        } else {
+            alert('you have this item in your cart')
+
+
+        }
+
+
+
+    })
+
+    let flag3 = 2
+
+
+    add[2].addEventListener('click', function () {
+
+
+        if (flag3 % 2 == 0) {
+            x2 = document.createElement('div')
+            x2.innerHTML = `<figure><img src="assets/img/product3.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">HOODED PARKA</div>
+                            <div class="price2">$0</div>
+                            <div class="last">
+                                <div class="num"><input type="number" value="1" id ="inp2"><span id ='total2'>Add</span></div>
+                                <i class="icon-trash" id = "trash2"></i>
+                            </div>`
+
+            list_add.append(x2)
+
+            let trash2 = document.getElementById('trash2')
+            trash2.addEventListener('click', function () {
+                x2.style.display = 'none'
+                flag3 = 2
+            })
+            let inp2 = document.getElementById('inp2')
+            let total2 = document.getElementById('total2')
+            price2 = document.getElementsByClassName('price2')[0]
+
+            total2.addEventListener('click', function () {
+
+                sample2 = price2.innerHTML = '$' + (inp2.value) * 45
+                sample2 = Number(sample2.replace('$',''))
+                arr.push(sample2)
+
+            })
+            flag3++
+
+        } else {
+            alert('you have this item in your cart')
+
+        }
+
+    })
+
+
+
+    let flag4 = 2
+    add[3].addEventListener('click', function () {
+
+        if (flag4 % 2 == 0) {
+            x3 = document.createElement('div')
+            x3.innerHTML = `<figure><img src="assets/img/product4.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">STRAW METAL BOTTLE</div>
+                            <div class="price3">$0</div>
+                            <div class="last">
+                                <div class="num"><input type="number" value="1" id = 'inp3'><span id ='total3'>Add</span></div>
+                                <i class="icon-trash" id = "trash3"></i>
+                            </div>`
+
+            list_add.append(x3)
+
+            let trash3 = document.getElementById('trash3')
+            trash3.addEventListener('click', function () {
+                x3.style.display = 'none'
+                flag4 = 2
+            })
+
+            let inp3 = document.getElementById('inp3')
+            let total3 = document.getElementById('total3')
+            price3 = document.getElementsByClassName('price3')[0]
+
+            total3.addEventListener('click', function () {
+
+                sample3 = price3.innerHTML = '$' + (inp3.value) * 24
+                sample3 = Number(sample3.replace('$',''))
+                arr.push(sample3)
+
+            })
+            flag4++
+
+        } else {
+            alert('you have this item in your cart')
+
+        }
+
+
+
+
+    })
+
+
+    let flag5 = 2
+    add[4].addEventListener('click', function () {
+
+
+        if (flag5 % 2 == 0) {
+            x4 = document.createElement('div')
+            x4.innerHTML = `<figure><img src="assets/img/product5.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">SILVER METAL SUNGLASSES</div>
+                            <div class="price4">$0</div>
+                            <div class="last">
+                                <div class="num"><input type="number" value="1" id = 'inp4'><span id ='total4'>Add</span></div>
+                                <i class="icon-trash" id = "trash4"></i>
+                            </div>`
+
+            list_add.append(x4)
+
+            let trash4 = document.getElementById('trash4')
+            trash4.addEventListener('click', function () {
+                x4.style.display = 'none'
+                flag5 = 2
+            })
+
+
+            let inp4 = document.getElementById('inp4')
+            let total4 = document.getElementById('total4')
+            price4 = document.getElementsByClassName('price4')[0]
+
+            total4.addEventListener('click', function () {
+
+                sample4 = price4.innerHTML = '$' + (inp4.value) * 50
+                sample4 = Number(sample4.replace('$',''))
+                arr.push(sample4)
+
+            })
+            flag5++
+
+
+        } else {
+            alert('you have this item in your cart')
+
+        }
+
+
+
+
+    })
+
+    let flag6 = 2
+    add[5].addEventListener('click', function () {
+
+
+        if (flag6 % 2 == 0) {
+            x5 = document.createElement('div')
+            x5.innerHTML = `<figure><img src="assets/img/product6.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">BLACK HAT</div>
+                            <div class="price5">$0</div>
+                            <div class="last">
+                                <div class="num"><input type="number" value="1" id ='inp5'><span id ='total5'>Add</span></div>
+                                <i class="icon-trash" id = "trash5"></i>
+                            </div>`
+
+            list_add.append(x5)
+
+            let trash5 = document.getElementById('trash5')
+            trash5.addEventListener('click', function () {
+                x5.style.display = 'none'
+                flag6 = 2
+            })
+
+
+            let inp5 = document.getElementById('inp5')
+            let total5 = document.getElementById('total5')
+            price5 = document.getElementsByClassName('price5')[0]
+
+            total5.addEventListener('click', function () {
+
+                sample5 = price5.innerHTML = '$' + (inp5.value) * 50
+                sample5 = Number(sample5.replace('$',''))
+                arr.push(sample5)
+
+            })
+
+            flag6++
+
+
+
+        } else {
+            alert('you have this item in your cart')
+
+        }
+
+
+
+
+    })
+
+
+    let flag7 = 2
+    add[6].addEventListener('click', function () {
+
+        if (flag7 % 2 == 0) {
+            x6 = document.createElement('div')
+            x6.innerHTML = `<figure><img src="assets/img/product7.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">BACKPACK</div>
+                            <div class="price6">$0</div>
+                            <div class="last">
+                                <div class="num"><input type="number" value="1" id='inp6'><span id ='total6'>Add</span></div>
+                                <i class="icon-trash" id = "trash6"></i>
+                            </div>`
+
+            list_add.append(x6)
+
+            let trash6 = document.getElementById('trash6')
+            trash6.addEventListener('click', function () {
+                x6.style.display = 'none'
+                flag7 = 2
+            })
+
+            let inp6 = document.getElementById('inp6')
+            let total6 = document.getElementById('total6')
+            price6 = document.getElementsByClassName('price6')[0]
+
+            total6.addEventListener('click', function () {
+
+                sample6 = price6.innerHTML = '$' + (inp6.value) * 70
+                sample6 = Number(sample6.replace('$',''))
+                arr.push(sample6)
+
+            })
+            flag7++
+
+
+
+        } else {
+            alert('you have this item in your cart')
+
+        }
+
+
+
+
+    })
+
+
+    let flag8 = 2
+    add[7].addEventListener('click', function () {
+
+        if (flag8 % 2 == 0) {
+
+            x7 = document.createElement('div')
+            x7.innerHTML = `<figure><img src="assets/img/product8.jpg" alt=""></figure>
+                        <div class="detail">
+                            <div class="name">ULTRABOOST 22</div>
+                            <div class="price7">$0</div>
+                            <div class="last">
+                                <div class="num"><input type="number" value="1" id = 'inp7'><span id ='total7'>Add</span></div>
+                                <i class="icon-trash" id = "trash7"></i>
+                            </div>`
+
+            list_add.append(x7)
+
+            let trash7 = document.getElementById('trash7')
+            trash7.addEventListener('click', function () {
+                x7.style.display = 'none'
+                flag8 = 2
+            })
+
+
+            let inp7 = document.getElementById('inp7')
+            let total7 = document.getElementById('total7')
+            price7 = document.getElementsByClassName('price7')[0]
+
+            total7.addEventListener('click', function () {
+
+                sample7 = price7.innerHTML = '$' + (inp7.value) * 450
+                sample7 = Number(sample7.replace('$',''))
+                arr.push(sample7)
+                
+
+
+            })
+
+            flag8++
+
+
+
+
+        } else {
+            alert('you have this item in your cart')
+
+        }
+
+
+
+
+    })
+
+
+
+    //////////////////////////////////////////////////////////////////////total btn
+    let sample7
+    let sample6
+    let sample5
+    let sample4
+    let sample3
+    let sample2
+    let sample1
+    let sample0
+
+    let pay1 = document.getElementById('pay1')
+    let pay2 = document.getElementById('pay2')
+    let arr =[]
+    let part = Number()
+
+
+    pay1.addEventListener('click', function () {
+
+        
+
+
+        for(i=0;i<arr.length;i++){
+             part += arr[i]
+             
+        }
+
+        pay2.innerHTML= part +"$"
+
+
+        // location.reload()
+
+        setTimeout(() => {
+            
+            alert('The order was placed')
+            
+        }, 1000);
+
+
+        setTimeout(() => {
+            location.reload()   
+        }, 2000);
+
+
+
+
+
+     
+   
+
+
+
+    })
+</script>
+
+</html>
